@@ -48,3 +48,21 @@ print(classification_report(y_test, y_pred))
 model_path = 'models/rf_baseline_model.pkl'
 joblib.dump(rf_model, model_path)
 print(f"\nModel saved successfully to {model_path}")
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+
+# 8. Generate and save the Confusion Matrix
+print("\nGenerating confusion matrix...")
+cm = confusion_matrix(y_test, y_pred)
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(cm, annot=False, cmap='Blues', fmt='g')
+plt.title('Random Forest Confusion Matrix')
+plt.xlabel('Predicted Label')
+plt.ylabel('True Label')
+
+# Save the plot
+plt.savefig('results/confusion_matrix.png')
+print("Confusion matrix saved successfully to results/confusion_matrix.png")
