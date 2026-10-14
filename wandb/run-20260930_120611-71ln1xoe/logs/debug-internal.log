@@ -1,0 +1,15 @@
+{"time":"2026-09-30T12:06:11.601634-05:00","level":"INFO","msg":"wandb-core"}
+{"time":"2026-09-30T12:06:11.601687-05:00","level":"INFO","msg":"stream: starting","core version":"0.30.0"}
+{"time":"2026-09-30T12:06:11.606933-05:00","level":"INFO","msg":"stream: created new stream","id":"71ln1xoe"}
+{"time":"2026-09-30T12:06:11.607189-05:00","level":"INFO","msg":"handler: started"}
+{"time":"2026-09-30T12:06:11.607284-05:00","level":"INFO","msg":"stream: started"}
+{"time":"2026-09-30T12:06:11.607294-05:00","level":"INFO","msg":"writer: started","stream_id":"71ln1xoe"}
+{"time":"2026-09-30T12:06:11.607456-05:00","level":"INFO","msg":"sender: started"}
+{"time":"2026-09-30T12:06:11.803299-05:00","level":"ERROR","msg":"api: HTTP error","status":403,"method":"POST","url":"https://api.wandb.ai/graphql"}
+{"time":"2026-09-30T12:06:11.803397-05:00","level":"ERROR","msg":"runupserter: failed to init run","error":"returned error 403: {\"data\":{\"upsertBucket\":null},\"errors\":[{\"message\":\"the provided API key cannot access this resource, check credentials\",\"path\":[\"upsertBucket\"]}]}"}
+{"time":"2026-09-30T12:06:12.096273-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-09-30T12:06:12.096319-05:00","level":"INFO","msg":"stream: finishing up"}
+{"time":"2026-09-30T12:06:12.096338-05:00","level":"INFO","msg":"handler: closed"}
+{"time":"2026-09-30T12:06:12.096515-05:00","level":"INFO","msg":"sender: closed"}
+{"time":"2026-09-30T12:06:12.096528-05:00","level":"INFO","msg":"stream: all finished"}
+{"time":"2026-09-30T12:06:12.285188-05:00","level":"ERROR","msg":"stream: runURL: runhandle: run not yet initialized"}

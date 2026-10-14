@@ -1,0 +1,17 @@
+{
+  "os":  "macOS-15.7.7-arm64-arm-64bit",
+  "python":  "CPython 3.11.16",
+  "startedAt":  "2026-09-30T17:12:12.286417Z",
+  "program":  "/Users/tanvir/Mid course project/src/log_rf_baseline.py",
+  "codePath":  "src/log_rf_baseline.py",
+  "codePathLocal":  "src/log_rf_baseline.py",
+  "git":  {
+    "remote":  "https://github.com/ghimirean/Mid-Course-Project.git",
+    "commit":  "424d929eaadb70141f091d62c62df0aad7294ea5"
+  },
+  "email":  "md.kamrulislam01010@gmail.com",
+  "root":  "/Users/tanvir/Mid course project",
+  "host":  "Tanvirs-MacBook-Air.local",
+  "executable":  "/opt/anaconda3/envs/signlanguage/bin/python",
+  "writerId":  "kpihityrtsbwl1732ery6oizee3sakuy"
+}

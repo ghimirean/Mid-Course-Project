@@ -1,0 +1,29 @@
+_wandb:
+    value:
+        cli_version: 0.30.0
+        e:
+            kpihityrtsbwl1732ery6oizee3sakuy:
+                codePath: src/log_rf_baseline.py
+                codePathLocal: src/log_rf_baseline.py
+                email: md.kamrulislam01010@gmail.com
+                executable: /opt/anaconda3/envs/signlanguage/bin/python
+                git:
+                    commit: 424d929eaadb70141f091d62c62df0aad7294ea5
+                    remote: https://github.com/ghimirean/Mid-Course-Project.git
+                host: Tanvirs-MacBook-Air.local
+                os: macOS-15.7.7-arm64-arm-64bit
+                program: /Users/tanvir/Mid course project/src/log_rf_baseline.py
+                python: CPython 3.11.16
+                root: /Users/tanvir/Mid course project
+                startedAt: "2026-09-30T17:12:12.286417Z"
+                writerId: kpihityrtsbwl1732ery6oizee3sakuy
+        m: []
+        python_version: 3.11.16
+        t:
+            "3":
+                - 2
+                - 13
+            "4": 3.11.16
+            "5": 0.30.0
+            "12": 0.30.0
+            "13": darwin-arm64
