@@ -1,5 +1,5 @@
 .venv/
 data/
-models/
+models/sign_mnist_mlp.keras
 __pycache__/
 .DS_Store

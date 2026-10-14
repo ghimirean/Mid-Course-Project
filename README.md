@@ -1,6 +1,6 @@
 # Sign Language MNIST: deployment prototype
 
-This repository includes a Streamlit prototype for classifying a cropped ASL hand-sign image with the project's three-hidden-layer MLP. The model predicts one of the 24 static Sign Language MNIST letters. J and Z are not in the dataset; J's label slot remains unused to match the notebook's 25-output model.
+This repository includes a Streamlit prototype for classifying a cropped ASL hand-sign image with a convolutional neural network (CNN). It uses the same Sign Language MNIST labels as the project's MLP experiments and learns local handshape patterns from 28 × 28 images. J and Z are not in the dataset; J's label slot remains unused in the 25-position output layer.
 
 ## Run locally
 
@@ -27,12 +27,12 @@ python src/train_model.py
 streamlit run app.py
 ```
 
-Open the local URL printed by Streamlit and upload a PNG, JPG, BMP, or PPM image. The trainer saves `models/sign_mnist_mlp.keras`; dataset and model files are excluded from Git by default.
+Open the local URL printed by Streamlit and upload a PNG, JPG, BMP, or PPM image. The trainer saves `models/sign_mnist_cnn.keras`, which is included in this repository for deployment; the Kaggle CSV files remain excluded. The CNN can take longer to train than the MLP, but uses early stopping and reports accuracy on the held-out test CSV.
 
 ## Deploy on Streamlit Community Cloud
 
 1. Train the model locally with the dataset and confirm the prototype works.
-2. Make the trained `models/sign_mnist_mlp.keras` artifact available in the GitHub repository used for deployment. Model artifacts are often too large for ordinary Git; if this one exceeds GitHub's file limit, store it in Git LFS or an artifact host and download it during app startup.
+2. Make the trained `models/sign_mnist_cnn.keras` artifact available in the GitHub repository used for deployment. Model artifacts are often too large for ordinary Git; if this one exceeds GitHub's file limit, store it in Git LFS or an artifact host and download it during app startup.
 3. Push the app code, `requirements.txt`, and model artifact (or its download setup) to GitHub.
 4. In Streamlit Community Cloud, create an app from that repository, set the main file to `app.py`, and deploy.
 

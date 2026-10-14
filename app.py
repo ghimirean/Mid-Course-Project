@@ -1,4 +1,4 @@
-"""Streamlit demo for the Sign Language MNIST MLP."""
+"""Streamlit demo for the Sign Language MNIST CNN."""
 
 from pathlib import Path
 
@@ -10,7 +10,7 @@ from tensorflow.keras.models import load_model
 
 
 ROOT = Path(__file__).resolve().parent
-MODEL_PATH = ROOT / "models" / "sign_mnist_mlp.keras"
+MODEL_PATH = ROOT / "models" / "sign_mnist_cnn.keras"
 # Sign Language MNIST uses labels 0-24 and omits J (9); Z is a motion sign.
 CLASS_IDS = [label for label in range(25) if label != 9]
 LABELS = [chr(ord("A") + label) for label in CLASS_IDS]
@@ -43,7 +43,7 @@ def prepare_image(image: Image.Image) -> tuple[np.ndarray, Image.Image]:
     # photos and scans so their background matches the training images.
     if image.size != (28, 28) and np.mean(pixels) > 127:
         pixels = 255 - pixels
-    return pixels.reshape(1, 784) / 255.0, canvas
+    return pixels.reshape(1, 28, 28, 1) / 255.0, canvas
 
 
 def read_uploaded_image(upload) -> Image.Image:
@@ -136,8 +136,11 @@ else:
                 f"{target_letter} example", min_value=1, max_value=len(matching_rows), value=1
             )
             row = matching_rows.iloc[sample_number - 1]
-            sample = row.drop(labels="label").to_numpy(dtype=np.float32).reshape(1, 784) / 255.0
-            sample_image = Image.fromarray((sample.reshape(28, 28) * 255).astype(np.uint8), mode="L")
+            sample_image = Image.fromarray(
+                row.drop(labels="label").to_numpy(dtype=np.uint8).reshape(28, 28), mode="L"
+            )
+            sample = np.asarray(sample_image, dtype=np.float32)
+            sample = (sample / 255.0).reshape(1, 28, 28, 1)
             scores = np.asarray(model.predict(sample, verbose=0))[0]
             truth = int(row["label"])
             winner = int(np.argmax(scores))
